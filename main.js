@@ -32,8 +32,22 @@ const nuevoCurso = {
     cupo: cupo
 }
 
+// el json.stringify sirve para conver
 localStorage.setItem('curso' , JSON.stringify(nuevoCurso))
 form.reset();
 
+});
+
+
+document.addEventListener('DOMContentLoaded' , ()=> {
+    const cursoCreado  = localStorage.getItem('curso');
+        if (cursoCreado) {
+
+            // el json.parse sirve para volve a convertir los datos que habia convertido en string con json.stringify en un objeto
+            const constCurso = JSON.parse(cursoCreado);
+
+            msjCurso.style.whiteSpace = "pre-line";            
+            msjCurso.textContent = 'Curso: ' + constCurso.curso + '\n Profesor: ' + constCurso.profesor + '\n Precio: ' + constCurso.precio + '\n Piudad: ' + constCurso.ciudad + '\n Cupo: ' + constCurso.cupo;
+        }
 });
 
