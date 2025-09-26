@@ -32,24 +32,17 @@ const nuevoCurso = {
     cupo: cupo
 }
 
+
+// capturamos el arreglo existente en el local storage o lo creamos vacio si no existe preivamente
+const cursosGuardados = JSON.parse(localStorage.getItem('cursos')) || [];
+
+// agregamos al arreglo cursosGuardados [] el nuevoCurso
+cursosGuardados.push(nuevoCurso);
+
+
 // el json.stringify sirve para conver
-localStorage.setItem('curso' , JSON.stringify(nuevoCurso))
-
+localStorage.setItem('cursos' , JSON.stringify(cursosGuardados));
 form.reset();
-
-    const cursoCreado  = localStorage.getItem('curso');
-
-        // el json.parse sirve para volve a convertir los datos que habia convertido en string con json.stringify en un objeto
-        const constCurso = JSON.parse(cursoCreado);
-
-        msjCurso.style.whiteSpace = "pre-line";            
-        msjCurso.textContent = 'Curso: ' + constCurso.curso + '\n Profesor: ' + constCurso.profesor + '\n Precio: ' + constCurso.precio + '\n Piudad: ' + constCurso.ciudad + '\n Cupo: ' + constCurso.cupo;
-
-        inputCurso.value="";
-        inputProfesor.value="";
-        inputPrecio.value="";
-        inputCiudad.value="";
-        inputCupo.value="";
 
 });
 
@@ -68,7 +61,9 @@ document.addEventListener('DOMContentLoaded' , ()=> {
 
 
 btnBorrar.addEventListener('click' , ()=>{
-    localStorage.removeItem('curso');
+    localStorage.removeItem('cursos');
     msjCurso.textContent = 'aqui se mostrara el curso creado'
 });
+
+
 

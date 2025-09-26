@@ -1,0 +1,121 @@
+
+    /* 🎨 Paleta moderna */
+    :root {
+        --color-primary: #6C63FF;
+        --color-primary-dark: #554fd6;
+        --color-bg: #f8f9ff;
+        --color-card: #ffffff;
+        --color-text: #333;
+        --color-accent: #FF6584;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: var(--color-bg);
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        animation: fadeIn 0.5s ease-in-out;
+    }
+
+    h1 {
+        margin-top: 30px;
+        color: var(--color-primary);
+        font-size: 2rem;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    form {
+        background: var(--color-card);
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(108, 99, 255, 0.2);
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 320px;
+        margin: 20px 0;
+        transition: transform 0.2s ease;
+    }
+
+    form:hover {
+        transform: scale(1.02);
+    }
+
+    input {
+        padding: 12px;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        font-size: 1rem;
+        outline: none;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    input:focus {
+        border-color: var(--color-primary);
+        box-shadow: 0 0 8px rgba(108, 99, 255, 0.3);
+    }
+
+    button {
+        background: var(--color-primary);
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+        background: var(--color-primary-dark);
+        transform: translateY(-2px);
+    }
+
+    #mensaje-curso {
+        background: var(--color-card);
+        padding: 18px;
+        border-radius: 12px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        width: 320px;
+        text-align: left;
+        white-space: pre-line;
+        line-height: 1.6;
+        font-size: 1rem;
+        border-left: 5px solid var(--color-accent);
+        animation: slideIn 0.4s ease-in-out;
+    }
+
+    a {
+        margin-top: 10px;
+        color: var(--color-primary);
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+    a:hover {
+        color: var(--color-primary-dark);
+        text-decoration: underline;
+    }
+
+    /* Animaciones */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+}
