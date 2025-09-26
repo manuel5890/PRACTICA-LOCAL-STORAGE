@@ -1,18 +1,59 @@
-table{
-    border: 1px solid black;
-    margin: 0 auto;
-    width: 70%;
+/* 🎨 Tabla de Cursos */
+#tablaCursos {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: var(--color-card);
+    box-shadow: 0 8px 20px rgba(108, 99, 255, 0.15);
+    border-radius: 12px;
+    overflow: hidden;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
-table td, table tr{
-    border: 1px solid red;
+/* Encabezados */
+#tablaCursos thead {
+    background: var(--color-primary);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-table thead{
-    background: yellow;
+#tablaCursos th {
+    padding: 15px;
+    text-align: left;
+    font-size: 0.9rem;
 }
 
+/* Filas */
+#tablaCursos tbody tr {
+    transition: background 0.3s ease;
+}
 
-table thead td{
-    padding: 10px;
+#tablaCursos tbody tr:nth-child(even) {
+    background: #f4f4ff; /* filas alternadas */
+}
+
+#tablaCursos tbody tr:hover {
+    background: rgba(108, 99, 255, 0.08);
+}
+
+/* Celdas */
+#tablaCursos td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eaeaea;
+    color: var(--color-text);
+    font-size: 0.95rem;
+}
+
+/* Efecto sutil en las celdas */
+#tablaCursos td:first-child {
+    font-weight: bold;
+    color: var(--color-primary-dark);
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
